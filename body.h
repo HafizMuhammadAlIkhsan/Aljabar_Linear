@@ -8,5 +8,6 @@ using namespace std;
 
 void createMatrix(int matrix[][100], int baris, int kolom);
 void displayMatrix(int matrix[][100], int baris, int kolom);
+void inversMatriks();
 
 #endif
