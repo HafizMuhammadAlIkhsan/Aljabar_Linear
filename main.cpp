@@ -6,6 +6,15 @@ int main()
 {
     int barisA, kolomA, barisB, kolomB, a[100][100], b[100][100], i, j;
 
+    cout << "\nMasukan baris untuk matriks B: ";
+    cin >> barisB;
+
+    cout << "Masukan kolom untuk matriks B: ";
+    cin >> kolomB;
+
+    createMatrix(b, barisB, kolomB);
+    displayMatrix(b, barisB, kolomB);
+
     cout << "Masukan baris untuk matriks A: ";
     cin >> barisA;
 
@@ -15,14 +24,7 @@ int main()
     createMatrix(a, barisA, kolomA);
     displayMatrix(a, barisA, kolomA);
 
-    cout << "\nMasukan baris untuk matriks B: ";
-    cin >> barisB;
-
-    cout << "Masukan kolom untuk matriks B: ";
-    cin >> kolomB;
-
-    createMatrix(b, barisB, kolomB);
-    displayMatrix(b, barisB, kolomB);
+    inversMatriks();
 
     return 0;
 }
