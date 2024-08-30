@@ -1,6 +1,6 @@
 #include "body.h"
 
-void createMatrix(int matrix[][100], int baris, int kolom)
+void createMatrix(float matrix[][10], int baris, int kolom)
 {
     int i, j;
 
@@ -14,7 +14,7 @@ void createMatrix(int matrix[][100], int baris, int kolom)
     }
 }
 
-void displayMatrix(int matrix[][100], int baris, int kolom)
+void displayMatrix(float matrix[][10], int baris, int kolom)
 {
     cout << endl << "Matriks" << endl;
     for (int i = 0; i < baris; ++i)
@@ -27,7 +27,7 @@ void displayMatrix(int matrix[][100], int baris, int kolom)
     }
 }
 
-void multipleMatrix(int matrixA[][100], int matrixB[][100], int matrixC[][100], int barisA, int kolomA, int barisB, int kolomB)
+void multipleMatrix(float matrixA[][10], float matrixB[][10], float matrixC[][10], int barisA, int kolomA, int barisB, int kolomB)
 {
     int m, n, j, i, k, r;
 
@@ -59,7 +59,7 @@ void multipleMatrix(int matrixA[][100], int matrixB[][100], int matrixC[][100], 
     displayMatrix(matrixC, barisA, kolomB);
 }
 
-void matriksNol(int matrixNol[][100], int matrix[][100], int baris, int kolom)
+void matriksNol(float matrixNol[][10], int matrix[][10], int baris, int kolom)
 {
     int i, j, k, r;
 
@@ -114,5 +114,39 @@ void inversMatriks()
             cout << invers[i][j] << " ";
         }
         cout << endl;
+    }
+}
+
+void Perkalian_matrix_scalar(float matrix[][10],int baris,int kolom,float scalar){
+    for (int i = 0; i < baris; ++i)
+    {
+        for (int j = 0; j < kolom; ++j)
+        {
+            matrix[i][j] *= scalar ;
+        }
+        cout << endl;
+    }
+    
+}
+void Penjumlahan_matrix(float a[][10],float b[][10],float c[][10],int baris,int kolom){
+    for (int i = 0; i < baris; i++)
+    {
+        for (int j = 0; i < kolom; j++)
+        {
+            c[i][j] = a[i][j]+b[i][j];
+        }
+        
+    }
+    
+}
+
+void Pengurangan_matrix(float a[][10],float b[][10],float c[][10],int baris,int kolom){
+    for (int i = 0; i < baris; i++)
+    {
+        for (int j = 0; i < kolom; j++)
+        {
+            c[i][j] = a[i][j]-b[i][j];
+        }
+        
     }
 }
