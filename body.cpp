@@ -128,31 +128,31 @@ void Perkalian_matrix_scalar(float matrix[][10],int baris,int kolom,float scalar
     }
     
 }
-void Penjumlahan_matrix(float a[][10],float b[][10],float c[][10],int baris,int kolom){
+void Penjumlahan_matrix(float matrixa[][10],float matrixb[][10],int baris,int kolom){
     for (int i = 0; i < baris; i++)
     {
-        for (int j = 0; i < kolom; j++)
+        for (int j = 0; j < kolom; j++)
         {
-            c[i][j] = a[i][j]+b[i][j];
+            matrixa[i][j] += matrixb[i][j];
         }
         
     }
     
 }
 
-void Pengurangan_matrix(float a[][10],float b[][10],float c[][10],int baris,int kolom){
+void Pengurangan_matrix(float matrixa[][10],float matrixb[][10],int baris,int kolom){
     for (int i = 0; i < baris; i++)
     {
-        for (int j = 0; i < kolom; j++)
+        for (int j = 0; j < kolom; j++)
         {
-            c[i][j] = a[i][j]-b[i][j];
+            matrixa[i][j] -= matrixb[i][j];
         }
         
     }
 }
 
-void matrixTranspose(int matrix[][100], int baris, int kolom){
-    int matrix2[kolom][baris];
+void matrixTranspose(float matrix[][10], int baris, int kolom){
+    int matrix2[10][10];
 
     for(int i = 0; i < baris; i++) {
         for(int j = 0; j < kolom; j++) {
@@ -171,7 +171,7 @@ void matrixTranspose(int matrix[][100], int baris, int kolom){
     }
 }
 
-void matrixIdentitas(int matrix[][100], int baris, int kolom){
+void matrixIdentitas(float matrix[][10], int baris, int kolom){
 
     if(baris == kolom){
         for(int i = 0; i < baris; i++) {
@@ -191,7 +191,7 @@ void matrixIdentitas(int matrix[][100], int baris, int kolom){
     
 }
 
-void matrixTrace(int matrix[][100], int baris, int kolom){
+void matrixTrace(float matrix[][10], int baris, int kolom){
     int hasil = 0;
 
     if(baris == kolom){

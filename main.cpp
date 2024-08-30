@@ -19,7 +19,6 @@ int main()
     createMatrix(a, barisA, kolomA);
     displayMatrix(a, barisA, kolomA);
 
-    /*
     cout << "\nMasukan baris untuk matriks B: ";
     cin >> barisB;
 
@@ -28,7 +27,6 @@ int main()
 
     createMatrix(b, barisB, kolomB);
     displayMatrix(b, barisB, kolomB);
-    */
 
     cout << "Mau ngapaiin?" << "\n";
     cout << "1. Perkalian Scalar" << "\n";
@@ -44,42 +42,43 @@ int main()
     Perkalian_matrix_scalar(a,barisA,kolomA,scalar);
     displayMatrix(a,barisA,kolomA);
 
-    /*
+    
     cout <<"Mau matrix yang mana? (A/B)\n";
     cin >> pilihan_dua_matrix;
     pilihan_dua_matrix=toupper(pilihan_dua_matrix);
 
-    switch (pilihan_dua_matrix)
-    {
-    case 'A':
-    Perkalian_matrix_scalar(a,barisA,kolomA,scalar);
-    displayMatrix(a,barisA,kolomA);
-        break;
-    case 'B':
-    Perkalian_matrix_scalar(b,barisB,kolomB,scalar);
-    displayMatrix(b,barisB,kolomB);
-        break;
-    default:
-        cout << "Tolong masukan input yang valid\n";
-        break;
-    }
-          
-        break;
-        */
+        switch (pilihan_dua_matrix)
+        {
+        case 'A':
+        Perkalian_matrix_scalar(a,barisA,kolomA,scalar);
+        displayMatrix(a,barisA,kolomA);
+            break;
+        case 'B':
+        Perkalian_matrix_scalar(b,barisB,kolomB,scalar);
+        displayMatrix(b,barisB,kolomB);
+            break;
+        default:
+            cout << "Tolong masukan input yang valid\n";
+            break;
+        }
+    break;
+
     case 2:
         if (barisA == barisB && kolomA == kolomB)
         {
-            /* code */
+            Penjumlahan_matrix(a,b,barisA,barisB);
+            displayMatrix(a,barisA,kolomA);
         }
         else
         {
             cout << "Karena matrix tidak seimbang maka tidak dapat di operasikan";
         }
-        break;
+    break;
     case 3:
         if (barisA == barisB && kolomA == kolomB)
         {
-            /* code */
+            Pengurangan_matrix(a,b,barisA,kolomB);
+            displayMatrix(a,barisA,kolomA);
         }
         else
         {
@@ -88,7 +87,7 @@ int main()
         break;
     default:
         break;
-    }
+}
 
     return 0;
 }
