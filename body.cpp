@@ -150,3 +150,61 @@ void Pengurangan_matrix(float a[][10],float b[][10],float c[][10],int baris,int 
         
     }
 }
+
+void matrixTranspose(int matrix[][100], int baris, int kolom){
+    int matrix2[kolom][baris];
+
+    for(int i = 0; i < baris; i++) {
+        for(int j = 0; j < kolom; j++) {
+            matrix2[j][i] = matrix[i][j];
+        }
+    }
+
+    cout << endl << "hasil setelah transpose" << endl;
+    for (int i = 0; i < kolom; ++i)
+    {
+        for (int j = 0; j < baris; ++j)
+        {
+            cout << matrix2[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void matrixIdentitas(int matrix[][100], int baris, int kolom){
+
+    if(baris == kolom){
+        for(int i = 0; i < baris; i++) {
+            for(int j = 0; j < kolom; j++) {
+                if(i == j){
+                    matrix[i][j] = 1;
+                }
+                else{
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+    else{
+                cout << "Bukan matriks persegi, sehingga Trace tidak bisa didapat.";
+    }
+    
+}
+
+void matrixTrace(int matrix[][100], int baris, int kolom){
+    int hasil = 0;
+
+    if(baris == kolom){
+        for(int i = 0; i < baris; i++) {
+            for(int j = 0; j < kolom; j++) {
+                if(i == j){
+                    hasil = hasil + matrix[i][j];
+                }
+            }
+        }
+            cout << hasil;
+    }
+    else{
+        cout << "Bukan matriks persegi, sehingga Trace tidak bisa didapat.";
+    }
+}
