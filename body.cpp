@@ -30,53 +30,65 @@ void displayMatrix(float matrix[10][10], int baris, int kolom)
 void multipleMatrix(float matrixA[][10], float matrixB[][10], float matrixC[][10], int barisA, int kolomA, int barisB, int kolomB)
 {
     int m, n, j, i, k, r;
+    
+    float tempMatrixC[10][10];
 
-    int mA = barisA;
-    int nA = kolomA;
-    int mB = barisB;
-    int nB = kolomB;
-
-    if (nA != mB)
+    if (kolomA != barisB)
     {
         return;
     }
 
-    r = nA;
-    m = mA;
-    n = nB;
+    r = kolomA; 
+    m = barisA; 
+    n = kolomB;
 
     for (i = 0; i < m; i++)
     {
         for (j = 0; j < n; j++)
         {
-            matrixC[i][j] = 0;
+            tempMatrixC[i][j] = 0; 
             for (k = 0; k < r; k++)
             {
-                matrixC[i][j] += matrixA[i][k] * matrixB[k][j];
+                tempMatrixC[i][j] += matrixA[i][k] * matrixB[k][j];
             }
         }
     }
-    displayMatrix(matrixC, mA, nB);
+
+    for (i = 0; i < m; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            matrixC[i][j] = tempMatrixC[i][j];
+        }
+    }
+
+    displayMatrix(matrixC, barisA, kolomB);
 }
 
 
 void matriksNol(float matrixNol[][10], int baris, int kolom)
 {
-    int nBaris = baris;
-    int nKolom = kolom;
+    float tempMatrix[10][10];
     
-    int i, j;
-
-    for (i = 0; i < nBaris; ++i)
+    for (int i = 0; i < baris; ++i)
     {
-        for (j = 0; j < nKolom; ++j)
+        for (int j = 0; j < kolom; ++j)
         {
-            matrixNol[i][j] = 0;
+            tempMatrix[i][j] = matrixNol[i][j];
+        }
+    }
+
+    for (int i = 0; i < baris; ++i)
+    {
+        for (int j = 0; j < kolom; ++j)
+        {
+            tempMatrix[i][j] = 0;
         }
     }
     
-    displayMatrix(matrixNol, nBaris, nKolom);
+    displayMatrix(tempMatrix, baris, kolom);
 }
+
 
 void inversMatriks(float matrix[10][10], int baris, int kolom)
 {
