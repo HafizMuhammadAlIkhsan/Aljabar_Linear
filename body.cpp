@@ -31,18 +31,19 @@ void multipleMatrix(float matrixA[][10], float matrixB[][10], float matrixC[][10
 {
     int m, n, j, i, k, r;
 
-    if (kolomA != barisB)
+    int mA = barisA;
+    int nA = kolomA;
+    int mB = barisB;
+    int nB = kolomB;
+
+    if (nA != mB)
     {
         return;
     }
 
-    if (kolomA == barisB)
-    {
-        r = kolomA;
-    }
-
-    m = barisA;
-    n = kolomB;
+    r = nA;
+    m = mA;
+    n = nB;
 
     for (i = 0; i < m; i++)
     {
@@ -51,12 +52,13 @@ void multipleMatrix(float matrixA[][10], float matrixB[][10], float matrixC[][10
             matrixC[i][j] = 0;
             for (k = 0; k < r; k++)
             {
-                matrixC[i][j] = matrixC[i][j] + matrixA[i][k] * matrixB[k][j];
+                matrixC[i][j] += matrixA[i][k] * matrixB[k][j];
             }
         }
     }
-    displayMatrix(matrixC, barisA, kolomB);
+    displayMatrix(matrixC, mA, nB);
 }
+
 
 void matriksNol(float matrixNol[][10], int baris, int kolom)
 {
