@@ -77,12 +77,12 @@ int main()
             switch (pilihan_dua_matrix)
             {
             case 'A':
-                Perkalian_matrix_scalar(a, barisA, kolomA, scalar);
-                displayMatrix(a, barisA, kolomA);
+                Perkalian_matrix_scalar(a,c, barisA, kolomA, scalar);
+                displayMatrix(c, barisA, kolomA);
                 break;
             case 'B':
-                Perkalian_matrix_scalar(b, barisB, kolomB, scalar);
-                displayMatrix(b, barisB, kolomB);
+                Perkalian_matrix_scalar(b,c, barisB, kolomB, scalar);
+                displayMatrix(c, barisB, kolomB);
                 break;
             default:
                 cout << "Tolong masukan input yang valid\n";

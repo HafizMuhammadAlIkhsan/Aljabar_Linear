@@ -133,13 +133,13 @@ void inversMatriks(float matrix[10][10], int baris, int kolom)
     }
 }
 
-void Perkalian_matrix_scalar(float matrix[][10], int baris, int kolom, float scalar)
+void Perkalian_matrix_scalar(float matrix[][10], float matrixb[][10],int baris, int kolom, float scalar)
 {
     for (int i = 0; i < baris; ++i)
     {
         for (int j = 0; j < kolom; ++j)
         {
-            matrix[i][j] *= scalar;
+            matrixb[i][j]= matrix[i][j] * scalar;
         }
         cout << endl;
     }
