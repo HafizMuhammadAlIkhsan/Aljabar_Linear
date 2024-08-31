@@ -1,6 +1,6 @@
 #include "body.h"
 
-void createMatrix(float matrix[][10], int baris, int kolom)
+void createMatrix(float matrix[10][10], int baris, int kolom)
 {
     int i, j;
 
@@ -14,23 +14,9 @@ void createMatrix(float matrix[][10], int baris, int kolom)
     }
 }
 
-void createMatrix(float matrix[][10], int baris, int kolom)
+void displayMatrix(float matrix[10][10], int baris, int kolom)
 {
-    int i, j;
-
-    for (i = 0; i < baris; ++i)
-    {
-        for (j = 0; j < kolom; ++j)
-        {
-            cout << "Masukan elemen matriks" << i + 1 << j + 1 << " : ";
-            cin >> matrix[i][j];
-        }
-    }
-}
-
-void displayMatrix(float matrix[][10], int baris, int kolom)
-{
-    cout << endl << "Matriks" << endl;
+    cout << "Matriks" << endl;
     for (int i = 0; i < baris; ++i)
     {
         for (int j = 0; j < kolom; ++j)
@@ -63,13 +49,12 @@ void multipleMatrix(float matrixA[][10], float matrixB[][10], float matrixC[][10
         for (j = 0; j < n; j++)
         {
             matrixC[i][j] = 0;
-            for (k = 0; k <  r; k++)
+            for (k = 0; k < r; k++)
             {
                 matrixC[i][j] = matrixC[i][j] + matrixA[i][k] * matrixB[k][j];
             }
         }
     }
-
     displayMatrix(matrixC, barisA, kolomB);
 }
 
@@ -91,26 +76,30 @@ void matriksNol(float matrixNol[][10], int baris, int kolom)
     displayMatrix(matrixNol, nBaris, nKolom);
 }
 
-void inversMatriks()
+void inversMatriks(float matrix[10][10], int baris, int kolom)
 {
-    int matriks[2][2], i, j, det;
-    float invers[2][2];
+    int det, i, j;
+    float invers[2][2], matriks[2][2];
+
+    if (baris != 2 && kolom != 2)
+    {
+        cout << "Hanya untuk matriks dengan ordo 2x2\n";
+        return;
+    }
 
     for (i = 0; i < 2; i++)
     {
         for (j = 0; j < 2; j++)
         {
-            cout << "a" << i + 1 << j + 1 << " = ";
-            cin >> matriks[i][j];
+            matriks[i][j] = matriks[i][j] + matrix[i][j];
         }
-        cout << endl;
     }
 
     det = matriks[0][0] * matriks[1][1] - matriks[0][1] * matriks[1][0];
 
     if (det == 0)
     {
-        cout << "determinan 0." << endl;
+        cout << "Matriks tersebut memiliki determinan 0" << endl;
         return;
     }
 
@@ -130,50 +119,54 @@ void inversMatriks()
     }
 }
 
-void Perkalian_matrix_scalar(float matrix[][10],int baris,int kolom,float scalar){
+void Perkalian_matrix_scalar(float matrix[][10], int baris, int kolom, float scalar)
+{
     for (int i = 0; i < baris; ++i)
     {
         for (int j = 0; j < kolom; ++j)
         {
-            matrix[i][j] *= scalar ;
+            matrix[i][j] *= scalar;
         }
         cout << endl;
     }
-    
 }
-void Penjumlahan_matrix(float matrixa[][10],float matrixb[][10],int baris,int kolom){
+
+void Penjumlahan_matrix(float matrixa[][10], float matrixb[][10], int baris, int kolom)
+{
     for (int i = 0; i < baris; i++)
     {
         for (int j = 0; j < kolom; j++)
         {
             matrixa[i][j] += matrixb[i][j];
         }
-        
     }
-    
 }
 
-void Pengurangan_matrix(float matrixa[][10],float matrixb[][10],int baris,int kolom){
+void Pengurangan_matrix(float matrixa[][10], float matrixb[][10], int baris, int kolom)
+{
     for (int i = 0; i < baris; i++)
     {
         for (int j = 0; j < kolom; j++)
         {
             matrixa[i][j] -= matrixb[i][j];
         }
-        
     }
 }
 
-void matrixTranspose(float matrix[][10], int baris, int kolom){
+void matrixTranspose(float matrix[][10], int baris, int kolom)
+{
     int matrix2[10][10];
 
-    for(int i = 0; i < baris; i++) {
-        for(int j = 0; j < kolom; j++) {
+    for (int i = 0; i < baris; i++)
+    {
+        for (int j = 0; j < kolom; j++)
+        {
             matrix2[j][i] = matrix[i][j];
         }
     }
 
-    cout << endl << "hasil setelah transpose" << endl;
+    cout << endl
+         << "hasil setelah transpose" << endl;
     for (int i = 0; i < kolom; ++i)
     {
         for (int j = 0; j < baris; ++j)
@@ -184,40 +177,52 @@ void matrixTranspose(float matrix[][10], int baris, int kolom){
     }
 }
 
-void matrixIdentitas(float matrix[][10], int baris, int kolom){
+void matrixIdentitas(float matrix[][10], int baris, int kolom)
+{
 
-    if(baris == kolom){
-        for(int i = 0; i < baris; i++) {
-            for(int j = 0; j < kolom; j++) {
-                if(i == j){
+    if (baris == kolom)
+    {
+        for (int i = 0; i < baris; i++)
+        {
+            for (int j = 0; j < kolom; j++)
+            {
+                if (i == j)
+                {
                     matrix[i][j] = 1;
                 }
-                else{
+                else
+                {
                     matrix[i][j] = 0;
                 }
             }
         }
     }
-    else{
-                cout << "Bukan matriks persegi, sehingga Trace tidak bisa didapat.";
+    else
+    {
+        cout << "Bukan matriks persegi, sehingga Trace tidak bisa didapat.";
     }
-    
 }
 
-void matrixTrace(float matrix[][10], int baris, int kolom){
+void matrixTrace(float matrix[][10], int baris, int kolom)
+{
     int hasil = 0;
 
-    if(baris == kolom){
-        for(int i = 0; i < baris; i++) {
-            for(int j = 0; j < kolom; j++) {
-                if(i == j){
+    if (baris == kolom)
+    {
+        for (int i = 0; i < baris; i++)
+        {
+            for (int j = 0; j < kolom; j++)
+            {
+                if (i == j)
+                {
                     hasil = hasil + matrix[i][j];
                 }
             }
         }
-            cout << hasil;
+        cout << hasil;
     }
-    else{
+    else
+    {
         cout << "Bukan matriks persegi, sehingga Trace tidak bisa didapat.";
     }
 }
