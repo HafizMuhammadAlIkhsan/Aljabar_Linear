@@ -157,13 +157,13 @@ void Pengurangan_matrix(float matrixa[][10], float matrixb[][10], int baris, int
 
 void matrixTranspose(float matrix[][10], int baris, int kolom)
 {
-    int matrix2[10][10];
+    float matrixTranspose[10][10];
 
     for (int i = 0; i < baris; i++)
     {
         for (int j = 0; j < kolom; j++)
         {
-            matrix2[j][i] = matrix[i][j];
+            matrixTranspose[j][i] = matrix[i][j];
         }
     }
 
@@ -173,7 +173,7 @@ void matrixTranspose(float matrix[][10], int baris, int kolom)
     {
         for (int j = 0; j < baris; ++j)
         {
-            cout << matrix2[i][j] << " ";
+            cout << matrixTranspose[i][j] << " ";
         }
         cout << endl;
     }
@@ -181,7 +181,8 @@ void matrixTranspose(float matrix[][10], int baris, int kolom)
 
 void matrixIdentitas(float matrix[][10], int baris, int kolom)
 {
-
+    float matrixIdentitas[10][10];
+    
     if (baris == kolom)
     {
         for (int i = 0; i < baris; i++)
@@ -190,14 +191,15 @@ void matrixIdentitas(float matrix[][10], int baris, int kolom)
             {
                 if (i == j)
                 {
-                    matrix[i][j] = 1;
+                    matrixIdentitas[i][j] = 1;
                 }
                 else
                 {
-                    matrix[i][j] = 0;
+                    matrixIdentitas[i][j] = 0;
                 }
             }
         }
+        displayMatrix(matrixIdentitas, baris, kolom);
     }
     else
     {

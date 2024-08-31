@@ -93,12 +93,60 @@ int main()
             }
             break;
         case 5:
+            cout << "Mau matrix yang mana? (A / B)\n";
+            cin >> pilihan_dua_matrix;
+            pilihan_dua_matrix = toupper(pilihan_dua_matrix);
+
+            switch (pilihan_dua_matrix)
+            {
+            case 'A':
+                matrixTranspose(a, barisA, kolomA);
+                break;
+            case 'B':
+                matrixTranspose(b, barisB, kolomB);
+                break;
+            default:
+                cout << "Tolong masukan input yang valid, A / B\n";
+                break;
+            }
             break;
         case 6:
+            cout << "Mau matrix yang mana? (A / B)\n";
+            cin >> pilihan_dua_matrix;
+            pilihan_dua_matrix = toupper(pilihan_dua_matrix);
+
+            switch (pilihan_dua_matrix)
+            {
+            case 'A':
+                matrixTrace(a, barisA, kolomA);
+                break;
+            case 'B':
+                matrixTrace(b, barisB, kolomB);
+                break;
+            default:
+                cout << "Tolong masukan input yang valid, A / B\n";
+                break;
+            }
             break;
         case 7:
             break;
         case 8:
+            cout << "Mau matrix yang mana? (A / B)\n";
+            cin >> pilihan_dua_matrix;
+            pilihan_dua_matrix = toupper(pilihan_dua_matrix);
+
+            switch (pilihan_dua_matrix)
+            {
+            case 'A':
+                matrixIdentitas(a, barisA, kolomA);
+                break;
+            case 'B':
+                matrixIdentitas(b, barisB, kolomB);
+                break;
+            default:
+                cout << "Tolong masukan input yang valid, A / B\n";
+                break;
+            }
             break;
         case 9:
             cout << "\nPilih matriks yang ingin di invers\n";
