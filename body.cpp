@@ -27,7 +27,7 @@ void displayMatrix(float matrix[10][10], int baris, int kolom)
     }
 }
 
-void multipleMatrix(float matrixA[][10], float matrixB[][10], float matrixC[][10], int barisA, int kolomA, int barisB, int kolomB)
+void multipleMatrix(float matrixA[][10], float matrixB[][10], int barisA, int kolomA, int barisB, int kolomB)
 {
     int m, n, j, i, k, r;
     
@@ -54,15 +54,7 @@ void multipleMatrix(float matrixA[][10], float matrixB[][10], float matrixC[][10
         }
     }
 
-    for (i = 0; i < m; i++)
-    {
-        for (j = 0; j < n; j++)
-        {
-            matrixC[i][j] = tempMatrixC[i][j];
-        }
-    }
-
-    displayMatrix(matrixC, barisA, kolomB);
+    displayMatrix(tempMatrixC, barisA, kolomB);
 }
 
 

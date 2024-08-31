@@ -68,11 +68,11 @@ int main()
         case 3:
             if (kolomA == barisB)
             {
-                    multipleMatrix(a, b, c, barisA, kolomA, barisB, kolomB);
+                multipleMatrix(a, b, barisA, kolomA, barisB, kolomB);
             }
             else
             {
-                cout << "Karena jumlah kolom matriks A tidak sama dengan jumlah baris matriks B, maka tidak dapat dioperasikan.";
+                cout << "Karena jumlah kolom matriks A tidak sama dengan jumlah baris matriks B, maka tidak dapat dioperasikan.\n";
             }
             break;
         case 4:
