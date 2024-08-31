@@ -66,6 +66,14 @@ int main()
             }
             break;
         case 3:
+            if (kolomA == barisB)
+            {
+                    multipleMatrix(a, b, c, barisA, kolomA, barisB, kolomB);
+            }
+            else
+            {
+                cout << "Karena jumlah kolom matriks A tidak sama dengan jumlah baris matriks B, maka tidak dapat dioperasikan.";
+            }
             break;
         case 4:
             cout << "Dikali Scalar berapa?";
@@ -127,6 +135,22 @@ int main()
             }
             break;
         case 7:
+            cout << "Mau matrix yang mana? (A / B)\n";
+            cin >> pilihan_dua_matrix;
+            pilihan_dua_matrix = toupper(pilihan_dua_matrix);
+
+            switch (pilihan_dua_matrix)
+            {
+            case 'A':
+            matriksNol(a, barisA, kolomA); // Memanggil fungsi untuk mengubah matriks A menjadi matriks nol
+            break;
+            case 'B':
+            matriksNol(b, barisB, kolomB); // Memanggil fungsi untuk mengubah matriks B menjadi matriks nol
+            break;
+    default:
+        cout << "Tolong masukan input yang valid, A / B\n";
+        break;
+    }
             break;
         case 8:
             cout << "Mau matrix yang mana? (A / B)\n";
