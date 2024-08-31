@@ -73,23 +73,22 @@ void multipleMatrix(float matrixA[][10], float matrixB[][10], float matrixC[][10
     displayMatrix(matrixC, barisA, kolomB);
 }
 
-void matriksNol(float matrixNol[][10], int matrix[][10], int baris, int kolom)
+void matriksNol(float matrixNol[][10], int baris, int kolom)
 {
-    int i, j, k, r;
+    int nBaris = baris;
+    int nKolom = kolom;
+    
+    int i, j;
 
-    for (i = 0; i < baris; ++i)
+    for (i = 0; i < nBaris; ++i)
     {
-        matrixNol[i][j] = 0;
-        for (j = 0; j < kolom; ++j)
+        for (j = 0; j < nKolom; ++j)
         {
-            matrixNol[i][j] = matrixNol[i][j] + matrix[i][k] * 0;
-            // for (k = 0; k <  r; k++)
-            // {
-            //     matrixNol[i][j] = matrixNol[i][j] + matrix[i][k] * 0;
-            // }
+            matrixNol[i][j] = 0;
         }
     }
-    displayMatrix(matrixNol, baris, kolom);
+    
+    displayMatrix(matrixNol, nBaris, nKolom);
 }
 
 void inversMatriks()
