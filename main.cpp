@@ -45,8 +45,8 @@ int main()
         case 1:
             if (barisA == barisB && kolomA == kolomB)
             {
-                Penjumlahan_matrix(a, b, barisA, barisB);
-                displayMatrix(a, barisA, kolomA);
+                Penjumlahan_matrix(a, b, c,barisA, barisB);
+                displayMatrix(c, barisA, kolomA);
             }
             else
             {
@@ -56,8 +56,8 @@ int main()
         case 2:
             if (barisA == barisB && kolomA == kolomB)
             {
-                Pengurangan_matrix(a, b, barisA, kolomB);
-                displayMatrix(a, barisA, kolomA);
+                Pengurangan_matrix(a, b,c, barisA, kolomB);
+                displayMatrix(c, barisA, kolomA);
             }
             else
             {
@@ -69,9 +69,6 @@ int main()
         case 4:
             cout << "Dikali Scalar berapa?";
             cin >> scalar;
-
-            Perkalian_matrix_scalar(a, barisA, kolomA, scalar);
-            displayMatrix(a, barisA, kolomA);
 
             cout << "Mau matrix yang mana? (A/B)\n";
             cin >> pilihan_dua_matrix;

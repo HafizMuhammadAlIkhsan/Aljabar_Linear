@@ -145,24 +145,24 @@ void Perkalian_matrix_scalar(float matrix[][10], int baris, int kolom, float sca
     }
 }
 
-void Penjumlahan_matrix(float matrixa[][10], float matrixb[][10], int baris, int kolom)
+void Penjumlahan_matrix(float matrixa[][10], float matrixb[][10], float matrixc[][10],int baris, int kolom)
 {
     for (int i = 0; i < baris; i++)
     {
         for (int j = 0; j < kolom; j++)
         {
-            matrixa[i][j] += matrixb[i][j];
+            matrixc[i][j] = matrixa[i][j] + matrixb[i][j];
         }
     }
 }
 
-void Pengurangan_matrix(float matrixa[][10], float matrixb[][10], int baris, int kolom)
+void Pengurangan_matrix(float matrixa[][10], float matrixb[][10], float matrixc[][10],int baris, int kolom)
 {
     for (int i = 0; i < baris; i++)
     {
         for (int j = 0; j < kolom; j++)
         {
-            matrixa[i][j] -= matrixb[i][j];
+            matrixc[i][j] = matrixa[i][j] - matrixb[i][j];
         }
     }
 }
