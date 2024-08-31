@@ -105,7 +105,7 @@ void inversMatriks(float matrix[10][10], int baris, int kolom)
     {
         for (j = 0; j < 2; j++)
         {
-            matriks[i][j] = matriks[i][j] + matrix[i][j];
+            matriks[i][j] = matrix[i][j];
         }
     }
 

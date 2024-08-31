@@ -39,6 +39,7 @@ int main()
         cout << "Pilihan berupa angka (1-9)\n";
         cout << "Pilihan: ";
         cin >> pilihan;
+        cin.ignore();
 
         switch (pilihan)
         {
@@ -155,6 +156,8 @@ int main()
 
             cout << "\nPilih Matriks A atau Matriks B: ";
             cin >> pilihMatriks;
+            cin.ignore();
+
             if (pilihMatriks == 'a' || pilihMatriks == 'A')
             {
                 inversMatriks(a, barisA, kolomA);
