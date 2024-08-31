@@ -24,8 +24,6 @@ int main()
     createMatrix(b, barisB, kolomB);
     displayMatrix(b, barisB, kolomB);
 
-
-
     do
     {
         cout << "\nPilih fitur" << "\n";
