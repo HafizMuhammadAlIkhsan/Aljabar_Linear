@@ -142,15 +142,15 @@ int main()
             switch (pilihan_dua_matrix)
             {
             case 'A':
-            matriksNol(a, barisA, kolomA); // Memanggil fungsi untuk mengubah matriks A menjadi matriks nol
-            break;
+                matriksNol(a, barisA, kolomA); // Memanggil fungsi untuk mengubah matriks A menjadi matriks nol
+                break;
             case 'B':
-            matriksNol(b, barisB, kolomB); // Memanggil fungsi untuk mengubah matriks B menjadi matriks nol
-            break;
-    default:
-        cout << "Tolong masukan input yang valid, A / B\n";
-        break;
-    }
+                matriksNol(b, barisB, kolomB); // Memanggil fungsi untuk mengubah matriks B menjadi matriks nol
+                break;
+            default:
+                cout << "Tolong masukan input yang valid, A / B\n";
+                break;
+            }
             break;
         case 8:
             cout << "Mau matrix yang mana? (A / B)\n";
