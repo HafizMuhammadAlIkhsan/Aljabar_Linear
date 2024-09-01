@@ -142,10 +142,10 @@ int main()
             switch (pilihan_dua_matrix)
             {
             case 'A':
-                matriksNol(a, barisA, kolomA); // Memanggil fungsi untuk mengubah matriks A menjadi matriks nol
+                matriksNol(a, barisA, kolomA); 
                 break;
             case 'B':
-                matriksNol(b, barisB, kolomB); // Memanggil fungsi untuk mengubah matriks B menjadi matriks nol
+                matriksNol(b, barisB, kolomB); 
                 break;
             default:
                 cout << "Tolong masukan input yang valid, A / B\n";
